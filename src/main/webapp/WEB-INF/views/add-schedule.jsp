@@ -74,40 +74,46 @@
     </ul>
   </c:if>
 
-  <form action="/mvc/posts/save" method="post">
-    <div class="form-group">
-      <label for="id">번호</label>
-      <input type="text" id="id" name="id" required>
-    </div>
-    <div class="form-group">
-      <label for="work">할 일</label>
-      <textarea id="work" name="work" required></textarea>
-    </div>
+  <form action="/mvc/users/save" method="post">
+    <!-- 작성자명 -->
     <div class="form-group">
       <label for="name">작성자명</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="username" required>
     </div>
-    <div class="form-group">
-      <label for="password">비밀번호</label>
-      <input type="password" id="password" name="password" required>
-    </div>
-    <div class="form-group">
-      <label for="origindate">작성일</label>
-      <input type="date" id="origindate" name="origindate" required>
-    </div>
-    <div class="form-group">
-      <label for="date">수정일</label>
-      <input type="date" id="date" name="date" required>
-    </div>
+
+    <!-- 이메일 -->
     <div class="form-group">
       <label for="email">이메일</label>
       <input type="email" id="email" name="email" required>
     </div>
-    <div class="form-actions">
-      <button type="submit" class="btn-save">저장</button>
-      <button type="button" class="btn-cancel" onclick="window.history.back()">취소</button>
+
+    <!-- 비밀번호 -->
+    <div class="form-group">
+      <label for="password">비밀번호</label>
+      <input type="password" id="password" name="password" required>
     </div>
+
+    <button type="submit" class="btn-save">저장</button>
   </form>
+
+  <form action="/mvc/schedules/save" method="post">
+
+    <!-- 할 일 제목 -->
+    <div class="form-group">
+      <label for="title">할 일 제목</label>
+      <input type="text" id="title" name="title" required>
+    </div>
+
+    <!-- 할 일 내용 -->
+    <div class="form-group">
+      <label for="content">할 일 내용</label>
+      <textarea id="content" name="content" required></textarea>
+    </div>
+
+    <button type="submit" class="btn-save">저장</button>
+  </form>
+
+
 </div>
 
 </body>

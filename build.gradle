@@ -13,36 +13,39 @@ java {
 		languageVersion = JavaLanguageVersion.of(17)
 	}
 }
-
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
 }
-
 repositories {
 	mavenCentral()
 }
 
 dependencies {
-	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	// Spring Boot Starter Dependencies
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // JPA 의존성
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'jakarta.transaction:jakarta.transaction-api:2.0.1' // Jakarta Transaction API
 
+	// JSP 사용 시 필요한 의존성
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
-	implementation 'jakarta.servlet:jakarta.servlet-api'
 	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
 	implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl'
-	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
-	// MySQL
-	implementation 'mysql:mysql-connector-java:8.0.28'
-	// JDBC Template
-	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	// MySQL 커넥터
+	runtimeOnly 'com.mysql:mysql-connector-j'
 
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// Lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// Tomcat
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+
+	// Testing
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }

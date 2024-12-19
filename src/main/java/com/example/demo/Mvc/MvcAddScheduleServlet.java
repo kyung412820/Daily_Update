@@ -1,4 +1,4 @@
-package com.example.springbasicjsp.Mvc;
+package com.example.demo.Mvc;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
