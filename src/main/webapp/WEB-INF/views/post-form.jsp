@@ -123,5 +123,8 @@
 <div class="add-btn">
   <button onclick="window.location.href='/mvc/posts/add-schedule'">일정 추가</button>
 </div>
+<div class="add-btn">
+  <button onclick="window.location.href='/mvc/posts/loginpost'">로그인</button>
+</div>
 </body>
 </html>
